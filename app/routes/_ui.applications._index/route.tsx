@@ -1,13 +1,13 @@
 import { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
 import { handleAuth } from './data/auth.server';
+import { mutations } from './data/mutations.server';
 import { getPageData } from './data/data-fetchers.server';
-import RequestList from './components/request-list';
+import ApplicationStats from './components/application-stats';
+import ApplicationsList from './components/overview-card';
 
 export const loader = async (args: LoaderFunctionArgs) => {
   await handleAuth(args);
-  const eventId = args.params.eventId as string;
-  const data = await getPageData({ eventId });
-
+  const data = await getPageData();
   return { ...data };
 };
 
@@ -18,8 +18,9 @@ export const action = async (args: ActionFunctionArgs) => {
 
 export default function Route() {
   return (
-    <>
-      <RequestList />
-    </>
+    <div className='p-4 flex flex-col gap-y-2'>
+      <ApplicationStats />
+      <ApplicationsList />
+    </div>
   )
 }
