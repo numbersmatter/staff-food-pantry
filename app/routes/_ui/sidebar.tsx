@@ -1,7 +1,9 @@
-import { Link } from "react-router"
+import { Form, Link } from "react-router"
+import { Button } from "~/components/ui/button"
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -71,6 +73,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         ))}
       </SidebarContent>
       <SidebarRail />
+      <SidebarFooter>
+        <Form method="POST" action="/sign-out">
+          <Button variant={"destructive"} type="submit">Sign Out</Button>
+
+        </Form>
+      </SidebarFooter>
     </Sidebar>
   )
 }
