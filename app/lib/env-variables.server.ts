@@ -6,6 +6,8 @@ const envSchema = z.object({
   COOKIE_SECRET: z.string().min(1),
   SERVICE_ACCOUNT: z.string().min(1),
   FIREBASE_APP_NAME: z.string().default("default"),
+  CLERK_PUBLISHABLE_KEY: z.string().min(1),
+  CLERK_SECRET_KEY: z.string().min(5),
 });
 
 export const initEnvVariables = () => {
