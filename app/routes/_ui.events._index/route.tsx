@@ -1,6 +1,7 @@
 import EventsList from "~/routes/_ui.events._index/components/events_list";
 import { getPageData } from "~/routes/_ui.events._index/data/data-fetchers";
 import type { Route } from "./+types/route"
+import PageHeader from "./components/page-header";
 
 
 export async function loader({ params }: Route.LoaderArgs) {
@@ -11,10 +12,7 @@ export async function loader({ params }: Route.LoaderArgs) {
 export default function Route() {
   return (
     <>
-      <h1>Events</h1>
-      <div className='flex flex-col gap-4 py-4'>
-        {/* <CreateNewEvent /> */}
-      </div>
+      <PageHeader />
       <EventsList />
     </>)
 }

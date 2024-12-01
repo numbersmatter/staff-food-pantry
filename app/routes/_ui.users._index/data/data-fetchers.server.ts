@@ -43,11 +43,14 @@ const getPageData = async () => {
   const clerkUsers = clerkUsersObjects.map((user) =>{
     const userId =user.id.split("_",2)[1];
 
+
+
     return {
       clerkId: user.id,
       userId,
       fname: user.firstName,
       lname: user.lastName,
+      lastSignInAt: user.lastSignInAt
     }
   })
 

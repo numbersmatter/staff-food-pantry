@@ -1,4 +1,4 @@
-import { Form, useRouteLoaderData } from "react-router";
+import { Form, Link, useRouteLoaderData } from "react-router";
 import { CheckCircle2Icon, XIcon } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import { loader as eventLoader } from "~/routes/_ui.events.$eventId/route"
@@ -50,8 +50,10 @@ export default function ChangeStage() {
             <div
               className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
             >
-              <XIcon aria-hidden="true" className="h-5 w-5 text-gray-400" />
-              cancel
+              <Link to={`/events/${event.id}`} className="flex justify-between gap-1">
+                <XIcon aria-hidden="true" className="h-5 w-5 text-gray-400" />
+                cancel
+              </Link>
             </div>
           </div>
           <div className="flex w-0 flex-1">
@@ -69,9 +71,7 @@ export default function ChangeStage() {
 
         </div>
       </div>
-      <pre>
-        {JSON.stringify(event, null, 2)}
-      </pre>
+
     </div>
 
   )

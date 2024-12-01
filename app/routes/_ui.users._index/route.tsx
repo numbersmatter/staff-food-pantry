@@ -4,6 +4,7 @@ import { mutations } from './data/mutations.server';
 import { getPageData } from './data/data-fetchers.server';
 import { Route } from './+types/route';
 import UsersList from './components/users-list';
+import ClerkUsersList from './components/clerk-users-cards';
 
 export const loader = async (args: Route.LoaderArgs) => {
   await handleAuth(args);
@@ -20,6 +21,7 @@ export default function UsersRoute() {
   return (
     <>
       <UsersList />
+      <ClerkUsersList />
     </>
   )
 }
