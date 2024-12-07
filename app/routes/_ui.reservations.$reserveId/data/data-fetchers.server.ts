@@ -7,8 +7,6 @@ const getPageData = async ({ reservationId }: { reservationId: string }) => {
     throw data("Not Found", { status: 404, statusText: "Reservation Not Found" });
   }
 
-
-
   return { reservation:reservationDoc };
 };
 

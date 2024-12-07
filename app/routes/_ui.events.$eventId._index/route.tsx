@@ -1,4 +1,4 @@
-import { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
+import { ActionFunctionArgs, LoaderFunctionArgs, useLoaderData } from 'react-router';
 import { handleAuth } from './data/auth.server';
 import { getPageData } from './data/data-fetchers.server';
 import RequestList from './components/request-list';
@@ -17,9 +17,13 @@ export const action = async (args: ActionFunctionArgs) => {
 };
 
 export default function Route() {
+  const data = useLoaderData<typeof loader>();
   return (
     <>
       <RequestList />
+      <pre>
+        {JSON.stringify(data, null, 2)}
+      </pre>
     </>
   )
 }

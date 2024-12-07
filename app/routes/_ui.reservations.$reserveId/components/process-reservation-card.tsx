@@ -2,11 +2,15 @@ import { useLoaderData, Link, Form } from "react-router";
 import { loader } from "../route";
 import { CheckCircle2Icon, XCircleIcon } from "lucide-react";
 import { Button } from "~/components/ui/button";
+import { convertTo12Hour } from "~/lib/utils";
 
 
 
 export default function ProcessReservationCard() {
   const { reservation } = useLoaderData<typeof loader>();
+
+  const timeSlot = convertTo12Hour(reservation.time);
+
   return (
     <div
       className="col-span-1 flex flex-col divide-y divide-gray-200 md:rounded-lg bg-white text-center shadow"
@@ -28,7 +32,13 @@ export default function ProcessReservationCard() {
           <dd className="text-sm text-gray-500">
             {new Date(reservation.createdDate).toLocaleDateString()}
           </dd>
-          <dt className="sr-only">Role</dt>
+          <dt >
+            Appointment Time
+          </dt>
+          <dd className="text-sm text-gray-500">
+            {timeSlot}
+          </dd>
+          <dt className="sr-only">Status</dt>
           <dd className="mt-3">
             <span className="inline-flex items-center px-2 py-1  font-medium ">
               {reservation.status}
