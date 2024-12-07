@@ -35,9 +35,14 @@ export default function RequestList() {
                       {`${request.primaryContact.fname} ${request.primaryContact.lname}`}
                     </Link>
                   </p>
-                  <p className="mt-1 flex text-xs leading-5 text-gray-500">
-                    {new Date(request.createdDate).toLocaleDateString()}
-                  </p>
+                  <div className="flex flex-row gap-5">
+                    <p className="mt-1 flex text-xs leading-5 text-gray-500">
+                      {new Date(request.createdDate).toLocaleDateString()}
+                    </p>
+                    <p className="mt-1 flex text-xs leading-5 text-gray-500">
+                      {timeSlot}
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="flex shrink-0 items-center gap-x-4">
