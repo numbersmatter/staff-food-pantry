@@ -1,4 +1,4 @@
-import { LoaderFunctionArgs } from '@remix-run/node';
+import { LoaderFunctionArgs } from 'react-router';
 
 export const handleAuth = async (args: LoaderFunctionArgs) => {
 };

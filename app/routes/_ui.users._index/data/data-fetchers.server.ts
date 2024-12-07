@@ -1,4 +1,4 @@
-import  { createClerkClient } from '@clerk/remix/api.server';
+import  { createClerkClient } from '@clerk/backend';
 import { getServerEnv } from '~/lib/env-variables.server';
 import { getActiveSemester } from '~/lib/business-logic/active-semester.server';
 import { foodPantryDb } from '~/services/databases/food-pantry-db.server';

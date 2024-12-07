@@ -9,7 +9,7 @@
     "typecheck": "react-router typegen && tsc --build --noEmit"
   },
   "dependencies": {
-    "@clerk/remix": "^4.2.57",
+    "@clerk/backend": "^1.20.0",
     "@conform-to/react": "^1.2.2",
     "@conform-to/zod": "^1.2.2",
     "@radix-ui/react-dialog": "^1.1.2",

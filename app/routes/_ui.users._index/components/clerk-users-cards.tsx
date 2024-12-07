@@ -32,7 +32,7 @@ export default function ClerkUsersList() {
                       {user.fname} {user.lname}
                     </p>
                     <p className="mt-1 flex text-xs leading-5 text-gray-500">
-                      {lastSignInAt}
+                      Last Signed-in: {lastSignInAt}
                     </p>
                   </div>
                 </Link>

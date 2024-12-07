@@ -20,7 +20,7 @@ export const action = async (args: Route.ActionArgs) => {
 export default function UsersRoute() {
   return (
     <>
-      <UsersList />
+      {/* <UsersList /> */}
       <ClerkUsersList />
     </>
   )
