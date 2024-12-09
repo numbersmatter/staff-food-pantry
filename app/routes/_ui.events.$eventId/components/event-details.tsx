@@ -14,7 +14,7 @@ import { cn } from "~/lib/utils";
 
 
 export default function EventDetails() {
-  const { event } = useLoaderData<typeof loader>();
+  const { event, pickupTimes } = useLoaderData<typeof loader>();
   return (
     <Card>
       <CardHeader>
@@ -30,6 +30,18 @@ export default function EventDetails() {
         <p>Type: {event.type}</p>
         <p>Semester: {event.semesterId}</p>
         <p>Status: {event.stage}</p>
+        <h5 className="text-lg font-semibold py-2">
+          Pickup Times
+        </h5>
+        <ol className="list-decimal list-inside px-4">
+          {pickupTimes.map((timeSlot, index) => (
+            <li key={timeSlot.key} className="list-item">
+              <span className="pl-4">
+                {timeSlot.value}
+              </span>
+            </li>
+          ))}
+        </ol>
       </CardContent>
       <CardFooter>
         <div className="flex justify-end gap-4">
