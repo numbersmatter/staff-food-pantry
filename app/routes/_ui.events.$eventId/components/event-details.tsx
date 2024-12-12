@@ -55,6 +55,16 @@ export default function EventDetails() {
           >
             Edit
           </NavLink>
+          <NavLink to={`/events/${event.id}/pickup`}
+            className={({ isActive }) => {
+              const activeClasses = isActive ? 'bg-gray-500 text-gray-700' : 'text-gray-900'
+
+              return cn('inline-flex items-center rounded-md bg-white px-4 py-2 text-sm font-semibold shadow-sm ring-1 ring-inset hover:ring-blue-300 hover:bg-gray-300', activeClasses)
+            }
+            }
+          >
+            Pickups
+          </NavLink>
 
         </div>
       </CardFooter>
