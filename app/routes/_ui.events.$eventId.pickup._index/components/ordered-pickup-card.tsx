@@ -12,7 +12,7 @@ import OrderedPickupList from "./ordered-pickup-list";
 
 
 export default function OrderedPickupCard() {
-  const { reservations } = useLoaderData<typeof loader>();
+  const { reservations, slots } = useLoaderData<typeof loader>();
 
   return (
     <Card>
@@ -26,7 +26,7 @@ export default function OrderedPickupCard() {
       </CardHeader>
       <CardContent className="px-0 sm:px-3">
         <OrderedPickupList />
-        <pre>{JSON.stringify(reservations, null, 2)}</pre>
+        <pre>{JSON.stringify(slots, null, 2)}</pre>
 
       </CardContent>
     </Card>

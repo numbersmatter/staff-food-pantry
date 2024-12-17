@@ -12,6 +12,8 @@ const getPageData = async (eventId:string) => {
   .map( r =>{
     const timeSlot = convertTo12Hour(r.time)
 
+    
+
     return {
       ...r,
       timeSlot

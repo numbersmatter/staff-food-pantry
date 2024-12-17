@@ -36,15 +36,7 @@ export default function PickupTimesCard() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <ol className="list-decimal list-inside px-4">
-          {pickupTimes.map((timeSlot) => (
-            <li key={timeSlot.key} className="list-item">
-              <span className="pl-4">
-                {timeSlot.value}
-              </span>
-            </li>
-          ))}
-        </ol>
+
         <PickupTimeList pickupTimes={pickupTimes} />
       </CardContent>
       <CardFooter>
@@ -85,6 +77,7 @@ function PickupTimeList({ pickupTimes }: { pickupTimes: { key: string, value: st
           timeId={pickupTime.key}
           displayTime={pickupTime.value}
           index={index}
+          key={pickupTime.key}
         />
       )
       )}

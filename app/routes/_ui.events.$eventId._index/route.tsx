@@ -1,7 +1,8 @@
-import { ActionFunctionArgs, LoaderFunctionArgs, useLoaderData } from 'react-router';
+import { ActionFunctionArgs, isRouteErrorResponse, LoaderFunctionArgs, useLoaderData } from 'react-router';
 import { handleAuth } from './data/auth.server';
 import { getPageData } from './data/data-fetchers.server';
 import RequestList from './components/request-list';
+import { Route } from './+types/route';
 
 export const loader = async (args: LoaderFunctionArgs) => {
   await handleAuth(args);
@@ -16,7 +17,7 @@ export const action = async (args: ActionFunctionArgs) => {
   return null;
 };
 
-export default function Route() {
+export default function Page() {
   const data = useLoaderData<typeof loader>();
   return (
     <>
@@ -27,3 +28,5 @@ export default function Route() {
     </>
   )
 }
+
+

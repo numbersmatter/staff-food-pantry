@@ -16,32 +16,20 @@ import { cn } from "~/lib/utils";
 export default function EventDetails() {
   const { event, pickupTimes } = useLoaderData<typeof loader>();
   return (
-    <Card>
+    <Card className="sticky top-0 z-40">
       <CardHeader>
         <CardTitle>
           {event.name}
         </CardTitle>
         <CardDescription>
-          Event Details
+          {event.eventDate.toLocaleDateString()}
+          {event.eventDate.toLocaleTimeString()}
+          <span className="text-gray-500">
+            - {event.stage}
+          </span>
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <p>Event Date: {event.eventDate.toLocaleDateString()}</p>
-        <p>Type: {event.type}</p>
-        <p>Semester: {event.semesterId}</p>
-        <p>Status: {event.stage}</p>
-        <h5 className="text-lg font-semibold py-2">
-          Pickup Times
-        </h5>
-        <ol className="list-decimal list-inside px-4">
-          {pickupTimes.map((timeSlot, index) => (
-            <li key={timeSlot.key} className="list-item">
-              <span className="pl-4">
-                {timeSlot.value}
-              </span>
-            </li>
-          ))}
-        </ol>
       </CardContent>
       <CardFooter>
         <div className="flex justify-end gap-4">
