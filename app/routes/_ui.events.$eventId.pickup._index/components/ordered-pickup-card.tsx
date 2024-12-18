@@ -26,7 +26,7 @@ export default function OrderedPickupCard() {
       </CardHeader>
       <CardContent className="px-0 sm:px-3">
         <OrderedPickupList />
-        <pre>{JSON.stringify(slots, null, 2)}</pre>
+
 
       </CardContent>
     </Card>

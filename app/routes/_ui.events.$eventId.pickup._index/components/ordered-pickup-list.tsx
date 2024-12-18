@@ -36,8 +36,12 @@ export default function OrderedPickupList() {
                 {reservationsAtTime.map((r) => {
                   const timeSlot = convertTo12Hour(r.time);
                   const createdDate = r.createdDate.toLocaleDateString();
+
+                  const deliveryStatus = r.deliveryDetails?.status ?? "waiting"
+                  const deliveryText = deliveryStatus === "delivered" ? "Delivered" : "Waiting"
+
                   return (
-                    <li key={r.id} className="relative flex justify-between gap-x-6 px-4 py-5 hover:bg-gray-50 sm:px-6">
+                    <li key={r.id} className="relative flex justify-between  px-4 py-5 hover:bg-gray-50 sm:px-6">
                       <div className="flex min-w-0 gap-x-4">
                         <div className="min-w-0 flex-auto">
                           <p className="text-sm font-semibold leading-6 text-gray-900">
@@ -54,13 +58,19 @@ export default function OrderedPickupList() {
                           </div>
                         </div>
                       </div>
-                      <div className="flex shrink-0 items-center gap-x-4">
-                        <div className="flex sm:flex-col sm:items-end">
-                          <p className="text-sm leading-6 text-gray-900">
-                            {r.confirm}
-                          </p>
+                      <div className="flex items-center justify-between gap-x-4 w-1/2 flex-none">
+
+                        {r.deliveryStatus === "waiting" && <p className="text-sm leading-6 text-gray-500">Waiting</p>}
+                        {r.deliveryStatus === "delivered" && <p className="text-sm leading-6 text-green-500">Delivered</p>}
+
+                        <div className="flex shrink-0 items-center gap-x-4">
+                          <div className="flex sm:flex-col sm:items-end">
+                            <p className="text-sm leading-6 text-gray-900">
+                              {r.confirm}
+                            </p>
+                          </div>
+                          <ChevronRightIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
                         </div>
-                        <ChevronRightIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
                       </div>
                     </li>
                   )

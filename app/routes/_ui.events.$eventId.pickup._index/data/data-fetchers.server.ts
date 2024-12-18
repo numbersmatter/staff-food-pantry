@@ -12,11 +12,14 @@ const getPageData = async (eventId:string) => {
   .map( r =>{
     const timeSlot = convertTo12Hour(r.time)
 
+    const deliveryStatus = r.deliveryDetails?.status ?? "waiting"
+
     
 
     return {
       ...r,
-      timeSlot
+      timeSlot,
+      deliveryStatus,
     }
 
   })
@@ -24,7 +27,7 @@ const getPageData = async (eventId:string) => {
   const slots = new Set<number>();
   const slotMap = new Map();
 
-  reservationsOrdered.map(r=>{
+  reservationsOrdered.map(r =>{
     slots.add(r.time)
   })
 

@@ -69,8 +69,8 @@ importers:
         specifier: ^13.0.1
         version: 13.0.1
       food-pantry-db:
-        specifier: ^1.0.1
-        version: 1.0.1
+        specifier: github:numbersmatter/food-pantry-db
+        version: https://codeload.github.com/numbersmatter/food-pantry-db/tar.gz/7438d3cbad583a75af80273de718651ecbb7d1cd
       isbot:
         specifier: ^5.1.17
         version: 5.1.17
@@ -1780,8 +1780,9 @@ packages:
     resolution: {integrity: sha512-sKQ/Yw8o/WdC9qTKvuLMBjTbdcBISIXW4+M9PXk0bNjxEbZf1Er7EVq47eRb5+bnKof10xlns6zAIbj4tmSexg==}
     engines: {node: '>=18'}
 
-  food-pantry-db@1.0.1:
-    resolution: {integrity: sha512-UlXKI5xemULX+UMnJg0/OifWd+gNxR1hzyYfk0+wTRzi9o30Cn78yNExLiF0ejvkCEW1MZj1nS7CE5ihUeerJQ==}
+  food-pantry-db@https://codeload.github.com/numbersmatter/food-pantry-db/tar.gz/7438d3cbad583a75af80273de718651ecbb7d1cd:
+    resolution: {tarball: https://codeload.github.com/numbersmatter/food-pantry-db/tar.gz/7438d3cbad583a75af80273de718651ecbb7d1cd}
+    version: 1.0.4
     engines: {node: '>=20.0.0'}
 
   foreground-child@3.3.0:
@@ -4787,7 +4788,7 @@ snapshots:
       - encoding
       - supports-color
 
-  food-pantry-db@1.0.1:
+  food-pantry-db@https://codeload.github.com/numbersmatter/food-pantry-db/tar.gz/7438d3cbad583a75af80273de718651ecbb7d1cd:
     dependencies:
       firebase-admin: 12.7.0
     optionalDependencies:
