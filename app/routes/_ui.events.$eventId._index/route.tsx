@@ -3,6 +3,7 @@ import { handleAuth } from './data/auth.server';
 import { getPageData } from './data/data-fetchers.server';
 import RequestList from './components/request-list';
 import { Route } from './+types/route';
+import ReportingCards from './components/reporting-cards';
 
 export const loader = async (args: LoaderFunctionArgs) => {
   await handleAuth(args);
@@ -21,6 +22,7 @@ export default function Page() {
   const data = useLoaderData<typeof loader>();
   return (
     <>
+      <ReportingCards />
       <RequestList />
       <pre>
         {JSON.stringify(data, null, 2)}

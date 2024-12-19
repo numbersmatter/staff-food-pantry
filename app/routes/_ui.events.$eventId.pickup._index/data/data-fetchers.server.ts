@@ -9,12 +9,9 @@ const getPageData = async (eventId:string) => {
 
   const reservationsOrdered = approvedReservations
   .sort((a,b)=> a.time - b.time)
-  .map( r =>{
+  .map( r => {
     const timeSlot = convertTo12Hour(r.time)
-
     const deliveryStatus = r.deliveryDetails?.status ?? "waiting"
-
-    
 
     return {
       ...r,
